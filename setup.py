@@ -4,15 +4,14 @@ import sys
 
 from setuptools import setup
 
-with open("./AutoStudies/__version__.py") as version_file:
-    version = version_file.read().split("\"")[1]
+version = '0.9'
 
 if sys.argv[-1] == 'publish':
     os.system('python setup.py sdist upload')
     sys.exit()
 
 install_reqs = [
-    "pushbullet.py",
+    "ruamel.yaml"
 ]
 
 
@@ -24,15 +23,15 @@ def read(fname):
         return ""
 
 setup(
-    name = "AutoStudies",
+    name = "yamlParser",
     version = version,
-    author = "Carlos Rubio",
+    author = "Carlos Rubio Abujas",
     author_email = "oldsphere@gmail.com",
-    description = ("A Study-Case system to systematic analysis"),
+    description = ("A customized yaml parser with deep search/replace functions"),
     license = "MIT",
-    keywords = "automatization cases simulation studies",
+    keywords = "yaml configuration parser",
     url = "",
-    packages=['AutoStudies'],
+    packages=['yamlParser'],
     #long_description=read('readme.md'),
     classifiers=[
         "Development Status :: 4 - Beta",
@@ -40,12 +39,9 @@ setup(
         "Programming Language :: Python",
         "Natural Language :: English",
         "License :: OSI Approved :: MIT License",
-        "Programming Language :: Python :: 2.7",
-        "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.2",
         "Topic :: Software Development :: Libraries :: Python Modules",
         "Topic :: Utilities"
     ],
-    install_requires=install_reqs,
-    dependency_links=['git+https://github.com/rbrcsk/pushbullet.py/#egg=pushbullet.py']
+    install_requires=install_reqs
 )

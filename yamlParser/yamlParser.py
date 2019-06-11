@@ -3,9 +3,7 @@
 # Description:
 #   Functions to parse YAML configuration files of Solstice
 
-import yaml
-import numpy as np
-
+from ruamel import yaml
 
 class DeepDict(dict):
     # - Constructor -
